@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Todo List</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div class="container">
+        <div class="todo-card">
+            <h1 class="title">Todo List</h1>
+            
+            <!-- Form Section -->
+            <div class="form-section">
+                <div class="input-group">
+                    <input type="text" id="todoInput" placeholder="Add a todo..." maxlength="100">
+                    <input type="date" id="dateInput">
+                    <button id="addBtn" class="add-btn">+</button>
+                </div>
+                <div class="error-message" id="errorMessage"></div>
+            </div>
+
+            <!-- Filter and Delete All Section -->
+            <div class="controls">
+                <div class="filter-section">
+                    <label for="filterSelect">FILTER</label>
+                    <select id="filterSelect" class="filter-select">
+                        <option value="all">All Tasks</option>
+                        <option value="pending">Pending</option>
+                        <option value="completed">Completed</option>
+                        <option value="today">Due Today</option>
+                        <option value="overdue">Overdue</option>
+                    </select>
+                </div>
+                <button id="deleteAllBtn" class="delete-all-btn">DELETE ALL</button>
+            </div>
+
+            <!-- Table Section -->
+            <div class="table-section">
+                <div class="table-header">
+                    <div class="header-cell task-header">TASK</div>
+                    <div class="header-cell date-header">DUE DATE</div>
+                    <div class="header-cell status-header">STATUS</div>
+                    <div class="header-cell actions-header">ACTIONS</div>
+                </div>
+                
+                <div class="table-body" id="todoTableBody">
+                    <div class="no-tasks">
+                        <p>No task found</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Confirmation Modal -->
+    <div id="confirmModal" class="modal">
+        <div class="modal-content">
+            <h3>Confirm Action</h3>
+            <p id="confirmMessage">Are you sure?</p>
+            <div class="modal-buttons">
+                <button id="confirmYes" class="btn-confirm">Yes</button>
+                <button id="confirmNo" class="btn-cancel">No</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/script.js"></script>
+</body>
+</html>
